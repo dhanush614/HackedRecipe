@@ -1,0 +1,57 @@
+<div class="container">
+	<div class="row">
+		<div class="col-lg-8 mx-auto">
+			<div class="py-4">
+				<form action="#">
+					<div class="p-1">
+						<div class="input-group">
+							<div class="input-group-append">
+								<button id="button-addon1" type="submit"
+									class="btn btn-light rounded rounded-pill shadow-sm bg-white ">
+									<i class="fas fa-search"></i>
+								</button>
+							</div>
+							<input type="search" placeholder="Search your favorite recipe..."
+								aria-describedby="button-addon1"
+								class="form-control bg-transparent text-secondary border-0">
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-10 mx-auto">
+				<h6 class="text-right category text-uppercase text-secondary">Category</h6>
+				<h2 class="text-right boldFont">Pizza &amp; Noodles</h2>
+			</div>
+		</div>
+		<div class="row py-3">
+			<div class="col-lg-10 mx-auto">
+				<div class="card-columns">
+					<div id="{{recipe.id}}" class="card border-0 shadow mt-2 mb-3"
+					*ngFor="let recipe of recipeList">
+						<div class="view overlay">
+							<img class="card-img-top" src="{{recipe.image}}"
+							alt="{{recipe.name}}">
+								<a href="#" class="recipe-label">
+									<span class="description">In {{recipe.category}}</span>
+								</a>
+							</div>
+							<div class="card-body">
+								<h6 class="card-title font-weight-bold boldFont">
+							{{recipe.name}} 
+									<i class="far fa-heart fa-lg float-right p-1"></i>
+								</h6>
+								<h6>
+									<i class="fas fa-rupee-sign px-1"></i>{{recipe.price}}
+						
+								</h6>
+								<p class="card-text description">{{recipe.description}}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<router-outlet></router-outlet>
+		</div>
